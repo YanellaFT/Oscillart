@@ -3,6 +3,8 @@ var amplitude = 40;
 var interval = null;
 let freq = 0;
 let reset = false;
+var timePerNote = 0;
+var length = 0;
 
 //define canvas variables
 var canvas = document.getElementById("canvas");
@@ -36,7 +38,7 @@ function frequency(pitch) {
     freq = pitch / 10000;
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
-    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + 0.9);
+    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + (timePerNote / 1000) - 0.1);
     
 }
 
@@ -47,6 +49,8 @@ function handle() {
     reset = true;
     var userNotes = String(input.value);
     var noteList = [];
+    length = userNotes.length;
+    timePerNote = (6000 / length);
 
     for (i = 0; i < userNotes.length; i++) {
         noteList.push(noteNames.get(userNotes.charAt(i)));
@@ -61,7 +65,7 @@ function handle() {
         } else {
             clearInterval(repeat);
         }
-    }, 1000)
+    }, timePerNote)
 
 
 }
@@ -84,7 +88,7 @@ function drawWave() {
 }
 
 function line() {
-    y = height/2 + (amplitude * Math.sin(x * 2 * Math.PI * freq));
+    y = height/2 + (amplitude * Math.sin(x * 2 * Math.PI * freq * (0.5 * length)));
     ctx.lineTo(x,y);
     ctx.stroke();
     x = x + 1;
@@ -92,7 +96,7 @@ function line() {
     //increase counter by 1 to show how long interval has been run
     counter++;
 
-    if(counter > 50) {
+    if(counter > timePerNote/20) {
         clearInterval(interval);
     }
 }
