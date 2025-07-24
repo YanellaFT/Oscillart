@@ -59,7 +59,7 @@ function handle() {
             drawWave();
             j++
         } else {
-            clearInterval(repeat)
+            clearInterval(repeat);
         }
     }, 1000)
 
@@ -75,10 +75,11 @@ function drawWave() {
     y = height/2;
     ctx.moveTo(x, y);
     ctx.beginPath();
+    }
 
     counter = 0;
     interval = setInterval(line,20);
-    }
+    
     reset = false;
 }
 
