@@ -2,6 +2,7 @@ const input = document.getElementById('input');
 var amplitude = 40;
 var interval = null;
 let freq = 0;
+let reset = false;
 
 //define canvas variables
 var canvas = document.getElementById("canvas");
@@ -35,7 +36,7 @@ function frequency(pitch) {
     freq = pitch / 10000;
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
-    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + 1);
+    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + 0.9);
     
 }
 
@@ -43,13 +44,32 @@ audioCtx.resume();
 gainNode.gain.value = 0;
 
 function handle() {
+    reset = true;
     var userNotes = String(input.value);
-    frequency(noteNames.get(userNotes));
-    drawWave();
+    var noteList = [];
+
+    for (i = 0; i < userNotes.length; i++) {
+        noteList.push(noteNames.get(userNotes.charAt(i)));
+    }
+
+    let j = 0;
+    repeat = setInterval(() => {
+        if (j < noteList.length) {
+            frequency(parseInt(noteList[j]));
+            drawWave();
+            j++
+        } else {
+            clearInterval(repeat)
+        }
+    }, 1000)
+
+
 }
 
 var counter = 0;
 function drawWave() {
+    clearInterval(interval);
+    if (reset) {
     ctx.clearRect(0, 0, width, height);
     x = 0;
     y = height/2;
@@ -58,6 +78,8 @@ function drawWave() {
 
     counter = 0;
     interval = setInterval(line,20);
+    }
+    reset = false;
 }
 
 function line() {
