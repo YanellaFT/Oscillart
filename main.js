@@ -23,7 +23,7 @@ gainNode.connect(audioCtx.destination);
 oscillator.type = "sine";
 
 //add color
-const colorPicker = document.getElementById('color');
+const color_picker = document.getElementById("color");
 
 oscillator.start();
 gainNode.gain.value = 0;
@@ -93,7 +93,7 @@ function drawWave() {
 function line() {
     y = height/2 + (amplitude * Math.sin(x * 2 * Math.PI * freq * (0.5 * length)));
     ctx.lineTo(x,y);
-    ctx.strokeStyle = colorPicker.value;
+    ctx.strokeStyle = color_picker.value;
     ctx.stroke();
     x = x + 1;
 
