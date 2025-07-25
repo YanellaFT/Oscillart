@@ -1,5 +1,4 @@
 const input = document.getElementById('input');
-var amplitude = 40;
 var interval = null;
 let freq = 0;
 let reset = false;
@@ -25,6 +24,9 @@ oscillator.type = "sine";
 //add color
 const color_picker = document.getElementById("color");
 
+//add volume slider
+const vol_slider = document.getElementById("vol-slider");
+
 oscillator.start();
 gainNode.gain.value = 0;
 
@@ -39,10 +41,15 @@ noteNames.set("G", 392.0);
 
 function frequency(pitch) {
     freq = pitch / 10000;
-    gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
+    gainNode.gain.setValueAtTime(vol_slider.value, audioCtx.currentTime);
+    setting = setInterval(() => {
+        gainNode.gain.value = vol_slider.value
+    }, 1);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
-    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + (timePerNote / 1000) - 0.1);
-    
+    setTimeout(() => {
+        clearInterval(setting);
+        gainNode.gain.value=0;
+    }, ((timePerNote) - 10));    
 }
 
 audioCtx.resume();
@@ -91,7 +98,7 @@ function drawWave() {
 }
 
 function line() {
-    y = height/2 + (amplitude * Math.sin(x * 2 * Math.PI * freq * (0.5 * length)));
+    y = height/2 + ((vol_slider.value/100)*40 * Math.sin(x * 2 * Math.PI * freq * (0.5 * length)));
     ctx.lineTo(x,y);
     ctx.strokeStyle = color_picker.value;
     ctx.stroke();
