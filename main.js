@@ -27,6 +27,10 @@ const color_picker = document.getElementById("color");
 //add volume slider
 const vol_slider = document.getElementById("vol-slider");
 
+//recording feature
+var blob, recorder = null;
+var chuncks = [];
+
 oscillator.start();
 gainNode.gain.value = 0;
 
@@ -110,5 +114,10 @@ function line() {
     if(counter > timePerNote/20) {
         clearInterval(interval);
     }
+}
+
+function startRecording() {
+    const canvasStream = canvas.captureStream(20);
+    const combinedStream = new MediaStream();
 }
 
