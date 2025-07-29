@@ -6,7 +6,6 @@ var timePerNote = 0;
 var length = 0;
 
 let chunks;
-let push;
 
 //define canvas variables
 var canvas = document.getElementById("canvas");
