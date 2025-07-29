@@ -48,6 +48,7 @@ noteNames.set("E", 329.6);
 noteNames.set("F", 349.2);
 noteNames.set("G", 392.0);
 
+
 function frequency(pitch) {
     freq = pitch / 10000;
     gainNode.gain.setValueAtTime(vol_slider.value, audioCtx.currentTime);
