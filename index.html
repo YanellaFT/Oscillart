@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Oscillart</title>
+    <title>M&M (Music & Math) - Oscillart</title>
     <link href="style.css" rel="stylesheet"/>
 </head>
 <body id = "body">
@@ -12,18 +12,22 @@
         <canvas id="canvas">
             
         </canvas>
-    </div>
-   
-
-    <input type="text" id="input">
-    <button id="submit" onClick="handle()">Submit Hz to hear sound</button>
-
     
+   
+    <p>Type in notes:</p>
+    <input type="text" id="input">
+    <button id="submit" onClick="handle()">Click to hear sound</button>
+    
+    <p> <br>Change color of wave:</p>
     <input type="color" id="color" value="#ff0000">
+
+    <p> <br>Volume:</p> 
     <input type="range" min="1" max="100" value="100" id="vol-slider">
     
+    <p> </p>
     <button id="record" onclick="toggle()">Start Recording</button>
 
     <script src="main.js"></script>
+    </div>
 </body>
 </html>

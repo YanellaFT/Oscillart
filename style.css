@@ -8,56 +8,41 @@
 
 #container  {
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 
     font-family: cursive;
 }
+
 
 #submit {
     
     font-family: cursive;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-    left: width/2;
-
+    height: 5vh;
 }
 
-#color {
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-}
-
-#range {
-    
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-}
 
 #record {
     
     font-family: cursive;
+    height: 5vh;
+}
 
-    display: flex;
+#range {
+    color: black;
+    height: 5vh;
+}
 
-    justify-content: center;
-    align-items: center;
+#color {
+    height: 8vh;
+
+}
+
+p {
+    height: 5vh;
 }
 
 body {
