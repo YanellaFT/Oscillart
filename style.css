@@ -6,7 +6,7 @@
     margin-bottom: 2em;
 }
 
-#container  {
+#title_canvas  {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,18 +21,18 @@
 #submit {
     
     font-family: cursive;
-    height: 5vh;
+    height: 4vh;
 }
 
 
 #record {
     
     font-family: cursive;
-    height: 5vh;
+    height: 4vh;
 }
 
-#range {
-    color: black;
+#vol-slider {
+    
     height: 5vh;
 }
 
@@ -41,8 +41,31 @@
 
 }
 
+.left {
+    align-items: center;
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: cursive;
+}
+
+.right {
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    text-align: center;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: cursive;
+}
+
 p {
     height: 5vh;
+    font-family: cursive;
 }
 
 body {

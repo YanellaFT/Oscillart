@@ -7,25 +7,29 @@
 </head>
 <body id = "body">
 
-    <div id="container">
+    <div id="title_canvas">
         <h1>M&M (Music & Math) - Oscillart</h1>
         <canvas id="canvas">
             
         </canvas>
-    
-   
+    </div>
+
+   <div id="left">
     <p>Type in notes:</p>
-    <input type="text" id="input">
-    <button id="submit" onClick="handle()">Click to hear sound</button>
+    <input type="text" id="input" class="left">
+    <button id="submit" class="left" onClick="handle()">Click to hear sound</button>
     
+       <p> </p>
+    <button id="record" class="left" onclick="toggle()">Start Recording</button>
+    </div>
+
+    <div id="right">
     <p> <br>Change color of wave:</p>
-    <input type="color" id="color" value="#ff0000">
+    <input type="color" id="color" class="right"value="#32a852">
 
     <p> <br>Volume:</p> 
-    <input type="range" min="1" max="100" value="100" id="vol-slider">
+    <input type="range" min="1" max="100" value="100" id="vol-slider" class = "right">
     
-    <p> </p>
-    <button id="record" onclick="toggle()">Start Recording</button>
 
     <script src="main.js"></script>
     </div>
