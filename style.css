@@ -17,31 +17,17 @@
     font-family: cursive;
 }
 
+/*#all {
+    display: flex;
+    flex-direction: column;
+} WORK HERE */
+
 
 #submit {
     
     font-family: cursive;
     height: 4vh;
-}
 
-
-#record {
-    
-    font-family: cursive;
-    height: 4vh;
-}
-
-#vol-slider {
-    
-    height: 5vh;
-}
-
-#color {
-    height: 8vh;
-
-}
-
-.left {
     align-items: center;
     display: flex;
     justify-content: left;
@@ -50,18 +36,47 @@
     gap: 5px;
 
     font-family: cursive;
+
+    position: absolute;
+    left: 50px;
 }
 
-.right {
+
+#record {
+    
+    font-family: cursive;
+    height: 4vh;
+
     align-items: center;
     display: flex;
-    justify-content: right;
+    justify-content: left;
     text-align: center;
     flex-direction: column;
     gap: 5px;
 
     font-family: cursive;
+
+    position: absolute;
+    left: 50px;
 }
+
+
+#right {
+
+
+    align-items: center;
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: cursive;
+
+    position: absolute;
+    right: 50px;
+}
+
 
 p {
     height: 5vh;
