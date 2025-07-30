@@ -5,8 +5,6 @@ let reset = false;
 var timePerNote = 0;
 var length = 0;
 
-let chunks;
-
 //define canvas variables
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -29,9 +27,6 @@ const color_picker = document.getElementById("color");
 //add volume slider
 const vol_slider = document.getElementById("vol-slider");
 
-//recording feature
-var blob, recorder = null;
-var chuncks = [];
 
 //record button
 const recording_toggle = document.getElementById('record');
@@ -122,6 +117,8 @@ function line() {
     }
 }
 
+var blob, recorder = null;
+var chunks = [];
 function startRecording() {
     const canvasStream = canvas.captureStream(20);
     const audioDestination = audioCtx.createMediaStreamDestination();
