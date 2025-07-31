@@ -119,6 +119,7 @@ function line() {
 
 var blob, recorder = null;
 var chunks = [];
+
 function startRecording() {
     const canvasStream = canvas.captureStream(20);
     const audioDestination = audioCtx.createMediaStreamDestination();
