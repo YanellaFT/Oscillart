@@ -85,6 +85,7 @@ function handle() {
 
 }
 
+
 var counter = 0;
 function drawWave() {
     clearInterval(interval);
@@ -97,6 +98,7 @@ function drawWave() {
     }
 
     counter = 0;
+
     interval = setInterval(line,20);
     
     reset = false;
@@ -105,7 +107,9 @@ function drawWave() {
 function line() {
     y = height/2 + ((vol_slider.value/100)*40 * Math.sin(x * 2 * Math.PI * freq * (0.5 * length)));
     ctx.lineTo(x,y);
-    ctx.strokeStyle = color_picker.value;
+    const waveColor = color_picker.value;
+
+    ctx.strokeStyle = waveColor;
     ctx.stroke();
     x = x + 1;
 
@@ -116,6 +120,7 @@ function line() {
         clearInterval(interval);
     }
 }
+
 
 var blob, recorder = null;
 var chunks = [];
@@ -161,3 +166,4 @@ function toggle() {
         recorder.stop();
     }
 }
+audioCtx.stop();
