@@ -17,76 +17,7 @@
     font-family: cursive;
 }
 
-#all {
-    display: flex;
-    flex-direction: row;
-} 
 
-
-#submit {
-    
-    font-family: cursive;
-    height: 4vh;
-
-    align-items: center;
-    display: flex;
-    justify-content: left;
-    text-align: center;
-    flex-direction: column;
-    gap: 5px;
-
-    font-family: cursive;
-
-    position: absolute;
-    left: 50px;
-}
-
-
-#record {
-    
-    font-family: cursive;
-    height: 4vh;
-
-    align-items: center;
-    display: flex;
-    justify-content: bottom;
-    text-align: center;
-    flex-direction: column;
-    gap: 5px;
-
-    font-family: cursive;
-
-    position: absolute;
-    left: 50px;
-}
-
-
-#right {
-
-
-    align-items: center;
-    display: flex;
-    justify-content: left;
-    text-align: center;
-    flex-direction: column;
-    gap: 5px;
-
-    font-family: cursive;
-
-    position: absolute;
-    right: 50px;
-}
-
-#top {
-    display: flex;
-    flex-direction: row;
-
-}
-
-#bottom {
-    display: flex;
-    flex-direction: row;
-}
 
 p {
     height: 5vh;
