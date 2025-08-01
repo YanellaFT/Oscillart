@@ -31,6 +31,7 @@ const vol_slider = document.getElementById("vol-slider");
 //record button
 const recording_toggle = document.getElementById('record');
 
+audioCtx.start();
 oscillator.start();
 gainNode.gain.value = 0;
 
