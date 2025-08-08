@@ -1,4 +1,3 @@
-//tryout123
 const input = document.getElementById('input');
 var interval = null;
 let freq = 0;
@@ -32,11 +31,10 @@ const vol_slider = document.getElementById("vol-slider");
 //record button
 const recording_toggle = document.getElementById('record');
 
-audioCtx.start();
 oscillator.start();
 gainNode.gain.value = 0;
 
-noteNames = new Map();
+var noteNames = new Map();
 noteNames.set("A", 440);
 noteNames.set("B", 493.9);
 noteNames.set("C", 261.6);
@@ -59,10 +57,9 @@ function frequency(pitch) {
     }, ((timePerNote) - 10));    
 }
 
-audioCtx.resume();
-gainNode.gain.value = 0;
-
 function handle() {
+    audioCtx.resume();
+
     reset = true;
     var userNotes = String(input.value);
     var noteList = [];
@@ -168,4 +165,3 @@ function toggle() {
         recorder.stop();
     }
 }
-audioCtx.stop();
